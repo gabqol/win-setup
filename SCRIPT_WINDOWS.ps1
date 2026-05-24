@@ -115,4 +115,3 @@ Write-Host "O computador sera reiniciado em 15 segundos..." -ForegroundColor Cya
 
 Start-Sleep -Seconds 15
 
-Restart-Computer -Force
