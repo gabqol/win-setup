@@ -1,5 +1,5 @@
 # ==========================================
-# WINDOWS AUTO SETUP
+# GABRIELL WINDOWS AUTO SETUP ;D	
 # ==========================================
 
 Clear-Host
@@ -22,7 +22,7 @@ if (-not $isAdmin) {
 
 Write-Host ""
 Write-Host "==========================================" -ForegroundColor Cyan
-Write-Host "        INICIANDO CONFIGURACAO            " -ForegroundColor Cyan
+Write-Host "         INICIANDO CONFIGURACAO            " -ForegroundColor Cyan
 Write-Host "==========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -30,7 +30,7 @@ Write-Host ""
 # ATUALIZAR WINGET
 # ==========================================
 
-Write-Host "[1/8] Atualizando Winget..." -ForegroundColor Yellow
+Write-Host "[1/11] Atualizando Winget..." -ForegroundColor Yellow
 winget source update
 
 # ==========================================
@@ -38,27 +38,35 @@ winget source update
 # ==========================================
 
 Write-Host ""
-Write-Host "[2/8] Instalando VLC..." -ForegroundColor Yellow
+Write-Host "[2/11] Instalando VLC..." -ForegroundColor Yellow
 winget install --id VideoLAN.VLC -e --silent
 
 Write-Host ""
-Write-Host "[3/8] Instalando 7-Zip..." -ForegroundColor Yellow
+Write-Host "[3/11] Instalando 7-Zip..." -ForegroundColor Yellow
 winget install --id 7zip.7zip -e --silent
 
 Write-Host ""
-Write-Host "[4/8] Instalando Chrome..." -ForegroundColor Yellow
+Write-Host "[4/11] Instalando Chrome..." -ForegroundColor Yellow
 winget install --id Google.Chrome -e --silent
 
 Write-Host ""
-Write-Host "[5/8] Instalando Slack..." -ForegroundColor Yellow
+Write-Host "[5/11] Instalando Slack..." -ForegroundColor Yellow
 winget install --id SlackTechnologies.Slack -e --silent
+
+Write-Host ""
+Write-Host "[6/11] Instalando FortiClient VPN..." -ForegroundColor Yellow
+winget install --id Fortinet.FortiClientVPN -e --silent
+
+Write-Host ""
+Write-Host "[7/11] Instalando RustDesk..." -ForegroundColor Yellow
+winget install --id RustDesk.RustDesk -e --silent
 
 # ==========================================
 # ATIVAR .NET FRAMEWORK
 # ==========================================
 
 Write-Host ""
-Write-Host "[6/8] Ativando .NET Framework..." -ForegroundColor Yellow
+Write-Host "[8/11] Ativando .NET Framework..." -ForegroundColor Yellow
 
 Enable-WindowsOptionalFeature `
 -Online `
@@ -71,7 +79,7 @@ Enable-WindowsOptionalFeature `
 # ==========================================
 
 Write-Host ""
-Write-Host "[7/8] Ativando WSL..." -ForegroundColor Yellow
+Write-Host "[9/11] Ativando WSL..." -ForegroundColor Yellow
 
 Enable-WindowsOptionalFeature `
 -Online `
@@ -84,7 +92,7 @@ Enable-WindowsOptionalFeature `
 # ==========================================
 
 Write-Host ""
-Write-Host "[8/8] Ativando Virtual Machine Platform..." -ForegroundColor Yellow
+Write-Host "[10/11] Ativando Virtual Machine Platform..." -ForegroundColor Yellow
 
 Enable-WindowsOptionalFeature `
 -Online `
@@ -97,7 +105,7 @@ Enable-WindowsOptionalFeature `
 # ==========================================
 
 Write-Host ""
-Write-Host "Instalando Ubuntu..." -ForegroundColor Yellow
+Write-Host "[11/11] Instalando Ubuntu..." -ForegroundColor Yellow
 
 wsl --install -d Ubuntu
 
@@ -115,3 +123,4 @@ Write-Host "O computador sera reiniciado em 15 segundos..." -ForegroundColor Cya
 
 Start-Sleep -Seconds 15
 
+Restart-Computer -Force
